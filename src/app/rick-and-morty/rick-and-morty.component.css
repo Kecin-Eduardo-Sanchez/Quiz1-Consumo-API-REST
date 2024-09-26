@@ -1,21 +1,134 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+h2, h3 {
+  color: #333;
+}
+
+.character-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  margin-bottom: 20px;
+}
+
 .character-card {
-    border: 1px solid #ccc;
-    padding: 16px;
-    margin: 16px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    transition: transform 0.2s ease-in-out;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 15px;
+  width: calc(25% - 20px);
+  transition: transform 0.2s, box-shadow 0.2s; 
+  cursor: pointer;
+  text-align: center;
+  opacity: 0; 
+  transform: translateY(20px); 
+  animation: fadeInUp 0.5s forwards; 
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 2; 
+    transform: translateY(0); 
   }
-  
-  .character-card:hover {
-    transform: scale(1.05);
-  }
-  
-  img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-  }
-  
+}
+
+.character-card:hover {
+  transform: scale(1.05) translateY(-5px); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.character-image {
+  border-radius: 8px;
+  width: 60%;
+  height: auto;
+}
+
+.select-button {
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+.select-button:hover {
+  background-color: #0056b3;
+}
+
+.selected-character-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.selected-character-image {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  max-width: 300px; 
+}
+
+.selected-character-details {
+  margin: 15px 0;
+}
+
+.episode-table {
+  width: 80%; 
+  border-collapse: collapse; 
+  margin: 15px auto; 
+  border-radius: 10px; 
+  overflow: hidden; 
+}
+
+.episode-table th,
+.episode-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #000000; 
+}
+
+.episode-table th {
+  background-color: #007BFF; 
+  color: white; 
+  font-weight: bold;
+}
+
+.episode-table td {
+  background-color: #f9f9f9; 
+}
+
+.episode-table td:hover {
+  background-color: #8a1e9496; 
+}
+
+.back-button {
+  background-color: #61a4df;
+}
+
+.episode-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.episode-item {
+  background-color: #ec0000;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.episode-item:hover {
+  background-color: #e9ecef;
+}
